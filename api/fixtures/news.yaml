@@ -1,0 +1,11 @@
+App\Entity\NewsArticle:
+    article_{1..100}:
+        title: '<sentence()>'
+        body: '<paragraphs(10, true)>'
+        publicationDate: '<(new \DateTimeImmutable())>'
+
+App\Entity\Comment:
+    comment_{0..100}:
+        newsArticle: '@article_*'
+        author: '<name()>'
+        body: '<paragraphs(3, true)>'
